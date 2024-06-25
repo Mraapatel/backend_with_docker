@@ -47,7 +47,7 @@ const corsOptions = {
     origin: 'http://localhost:4200',  // URL of your frontend
     optionsSuccessStatus: 200
 }
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.get('/', (req, res) => {
     return res.json({ yoo: 'this is the server' })
