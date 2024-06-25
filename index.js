@@ -11,7 +11,7 @@ const socket = require('./middlewares/socket-io');
 const app = express();
 const server = require('http').Server(app);
 socket.initialize(server);
-const Port = process.env.PORT || 5000;
+const Port = process.env.PORT || 4000;
 const mongodbatlas = process.env.MONGODBATLAS
 const { startCron } = require('./utils/cron');
 // startCron();
