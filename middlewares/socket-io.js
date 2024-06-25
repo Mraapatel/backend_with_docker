@@ -16,7 +16,8 @@ global.ioInstance = null
 async function initialize(server) {
     global.ioInstance = new Server(server, {
         cors: {
-            origin: ['http://localhost:4200'],
+            // origin: ['http://localhost:4200'],
+            origin: '*',
             METHODS: ['GET', 'POSt'],
             credentials: true,
         }
