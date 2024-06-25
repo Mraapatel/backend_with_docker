@@ -16,17 +16,17 @@ jobs:
       - name: Login to docker hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}       
       - name: Build docker image
-        run: docker build -t ninja/backend .  
+        run: docker build -t ninjahathodi/backend .  
       - name: Publish image to docker hub
-        run: docker push ninja/backend:latest
+        run: docker push ninjahathodi/backend:latest
         
   deploy:
     needs: build
     runs-on: self-hosted
     steps:
       - name: Pull image from docker hub
-        run: docker pull ninja/backend:latest
+        run: docker pull ninjahathodi/backend:latest
       - name: Delete old container
         run: docker rm -f backend-container  
       - name: Run docker container
-        run: docker run -d -p 4000:5000 --name backend-container ninja/backend  
+        run: docker run -d -p 4000:5000 --name backend-container ninjahathodi/backend  
