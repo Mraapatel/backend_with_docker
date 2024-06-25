@@ -49,6 +49,10 @@ const corsOptions = {
 }
 app.use(cors(corsOptions));
 
+app.get('/', (req, res) => {
+    return res.json({ yoo: 'this is the server' })
+})
+
 app.use('/authenticate', jwt);
 
 app.use(varifyToken);
@@ -79,9 +83,6 @@ app.use('/test', test);
 
 app.use('/allkeys', allkeys); // done
 
-app.get('/', (req, res) => {
-    return res.json({ yoo: 'this is the server' })
-})
 
 // app.listen(Port, () => {
 //     console.log(`server is listning to port no:${Port}`);
