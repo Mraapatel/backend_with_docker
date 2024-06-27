@@ -57,7 +57,7 @@ app.use('/authenticate', jwt);
 
 app.use(varifyToken);
 
-app.use('/vehicleType', vehicleType);  //done
+app.use('/vehicleType', vehicleType);  
 
 app.use('/country', addCounty); // done
 
